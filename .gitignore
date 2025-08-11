@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Build artifacts (but keep the final binaries)
+*.o
+*.a
+*.dylib
+*.dSYM/
+
+# Xcode
+*.xcuserdata/
+*.xcworkspace/
+*.xcodeproj/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*~
