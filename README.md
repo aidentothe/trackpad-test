@@ -1,6 +1,6 @@
-# Trackpad Pressure Logger
+# Trackpad Audio Grid
 
-A macOS application that logs trackpad location and pressure data to the terminal.
+A macOS application that creates an interactive audio grid controlled by trackpad location and pressure.
 
 ## Requirements
 
@@ -24,7 +24,7 @@ make run
 ### Method 2: As an app bundle
 ```bash
 make app
-open TrackpadPressureLogger.app
+open TrackpadAudioGrid.app
 ```
 
 ## Permissions
@@ -33,33 +33,29 @@ This application requires accessibility permissions to capture global trackpad e
 
 1. Go to System Preferences > Security & Privacy > Privacy > Accessibility
 2. Click the lock to make changes
-3. Add the TrackpadPressureLogger application
+3. Add the TrackpadAudioGrid application
 4. Enable the checkbox next to it
 
-## Output Format
+## How it Works
 
-The logger outputs data in the following format:
-```
-[HH:mm:ss.SSS] EVENT_TYPE | Location: (X, Y) | Pressure: P.PPP
-```
-
-Where:
-- `HH:mm:ss.SSS` - Timestamp with milliseconds
-- `EVENT_TYPE` - Type of event (MOVE, DOWN, UP, DRAG, PRESSURE)
-- `X, Y` - Screen coordinates
-- `P.PPP` - Pressure value (0.000 to 1.000)
+The application creates an interactive audio grid where:
+- Horizontal position (X-axis) controls the pitch/frequency
+- Vertical position (Y-axis) controls additional audio parameters
+- Trackpad pressure controls the volume
+- Different grid cells trigger different notes or sounds
 
 ## Notes
 
 - Pressure values range from 0.0 (no pressure) to 1.0 (maximum pressure)
-- Location coordinates are in screen space
+- The grid maps the trackpad surface to musical notes
 - The application runs in the background (no dock icon)
-- Press Ctrl+C to stop the logger
+- Press Ctrl+C to stop the application
 
 ## Troubleshooting
 
-If you're not seeing pressure data:
+If the audio grid isn't working:
 1. Ensure you have a Force Touch trackpad
 2. Check that accessibility permissions are granted
-3. Try pressing harder on the trackpad
-4. Make sure you're running macOS 10.11 or later
+3. Verify audio output is enabled and volume is up
+4. Try pressing harder on the trackpad for volume control
+5. Make sure you're running macOS 10.11 or later
